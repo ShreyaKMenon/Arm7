@@ -1,0 +1,48 @@
+#include<LPC214x.h>
+void delay()
+{
+	unsigned int i=0;
+	while(i<200000)
+	{
+		i++;
+	}
+}
+int main()
+{
+	IODIR0|=(0x01<<16);
+	IODIR0|=(0x01<<17);
+	IODIR0|=(0x01<<18);
+	IODIR0|=(0x01<<19);
+	IODIR0|=(0x01<<20);
+	IODIR0|=(0x01<<21);
+	IODIR0|=(0x01<<22);
+	IODIR0|=(0x01<<23);
+	while(1)
+	{
+		IOSET0|=(0x01<<16);
+		delay();
+		IOCLR0|=(0x01<<16);
+		IOSET0|=(0x01<<17);
+		delay();
+		IOCLR0|=(0x01<<17);
+		IOSET0|=(0x01<<18);
+		delay();
+		IOCLR0|=(0x01<<18);
+		IOSET0|=(0x01<<19);
+		delay();
+		IOCLR0|=(0x01<<19);
+		IOSET0|=(0x01<<20);
+		delay();
+		IOCLR0|=(0x01<<20);
+		IOSET0|=(0x01<<21);
+		delay();
+		IOCLR0|=(0x01<<21);
+		IOSET0|=(0x01<<22);
+		delay();
+		IOCLR0|=(0x01<<22);
+		IOSET0|=(0x01<<23);
+		delay();
+		IOCLR0|=(0x01<<23);
+		delay();
+	}
+}
